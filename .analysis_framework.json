@@ -1,0 +1,26 @@
+{
+  "framework_version": 1,
+  "package": "jpsi_analysis",
+  "title": "J/psi to mu mu, 2023",
+  "experiment": "CMS",
+  "tree": "Events",
+  "objects": {
+    "pvs": "PV",
+    "muons": "Muon",
+    "electrons": "Electron",
+    "photons": "Photon",
+    "jets": "Jet",
+    "met": "MET",
+    "hlt": "HLT",
+    "flags": "Flag",
+    "gens": "GenPart"
+  },
+  "samples": [
+    {
+      "name": "jpsi_mumu_2023_condor",
+      "is_data": false
+    }
+  ],
+  "triggers": [],
+  "components": {}
+}

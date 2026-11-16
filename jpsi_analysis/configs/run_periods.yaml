@@ -1,0 +1,8 @@
+# Run periods. lumi is the integrated luminosity in /pb, used to scale simulation.
+# golden_json names a file in data/ and is applied to data of that period; leave it
+# out to keep every luminosity section (the processor warns when it does).
+# Period names are read as text: 2018 and "2018" name the same period.
+
+"2023":
+  # lumi: 0.0   # /pb: fill in before trusting any normalised yield
+  # golden_json: "Cert_..._JSON.txt"   # a file in data/

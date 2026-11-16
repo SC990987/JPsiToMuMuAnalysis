@@ -1,0 +1,3 @@
+include jpsi_analysis/configs/*.yaml
+include jpsi_analysis/configs/samples/*.yaml
+include jpsi_analysis/data/*

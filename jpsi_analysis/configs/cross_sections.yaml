@@ -1,0 +1,4 @@
+# Cross sections in pb, by sample name. A simulated sample that is not listed here
+# is left unscaled, and the processor says so in its warnings.
+
+"jpsi_mumu_2023_condor": 85400

@@ -1,0 +1,48 @@
+# Histogram collections: which of the histograms defined in definitions/hists.py
+# are filled. The processor is given collection names; a collection may include
+# others through yaml anchors ('&name' labels a list, '- *name' includes it).
+# Entries whose name starts with an underscore are not offered as collections.
+
+pv_base: &pv_base
+  - "pv_n"
+  - "pv_z"
+
+muon_base: &muon_base
+  - "muon_n"
+  - "muon_pt"
+  - "muon_eta_phi"
+  - "muon_muon_invmass"
+
+electron_base: &electron_base
+  - "electron_n"
+  - "electron_pt"
+  - "electron_eta_phi"
+
+photon_base: &photon_base
+  - "photon_n"
+  - "photon_pt"
+  - "photon_eta_phi"
+
+jet_base: &jet_base
+  - "jet_n"
+  - "jet_pt"
+  - "jet_eta_phi"
+
+met_base: &met_base
+  - "met_pt"
+  - "met_phi"
+
+gen_base: &gen_base
+  - "gen_n"
+  - "gen_pt"
+  - "gen_eta_phi"
+
+# everything above
+base:
+  - *pv_base
+  - *muon_base
+  - *electron_base
+  - *photon_base
+  - *jet_base
+  - *met_base
+  - *gen_base

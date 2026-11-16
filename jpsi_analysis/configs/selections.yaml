@@ -1,0 +1,54 @@
+# Selections: which of the cuts defined in definitions/cuts.py are applied.
+#
+# A selection has object cuts (obj_cuts, per object: they slim collections) and event
+# cuts (evt_cuts: they reject events, in the order listed, one cutflow row each).
+# Every top-level entry is a channel that can be run by name, except entries whose
+# name starts with an underscore: those only exist to be reused.
+#
+# Reuse works through yaml anchors: '&name' labels a block, '*name' pastes it and
+# '<<: *name' merges a mapping. Lists pasted inside lists are flattened when read.
+# A key written next to '<<: *name' replaces the merged key wholesale: to give one
+# selection its own cuts for an object, write that object's whole list there
+# (starting with its anchor, '- *muons_base', to keep the shared ones). Editing a
+# shared block (_object_cuts, _event_cuts) changes every selection that merges it.
+#
+# The selections below were written by the scaffold so that there is something to
+# run. They are a starting point, not this analysis's selection: replace them.
+
+# Object cuts shared by the selections below
+_object_cuts: &object_cuts
+  muons: &muons_base
+    - "pT > 5 GeV"
+    - "|eta| < 2.4"
+  electrons: &electrons_base
+    - "pT > 10 GeV"
+    - "|eta| < 2.4"
+  photons: &photons_base
+    - "pT > 20 GeV"
+    - "|eta| < 2.5"
+  jets: &jets_base
+    - "pT > 30 GeV"
+    - "|eta| < 2.4"
+
+# Event cuts shared by the selections below
+_event_cuts: &event_cuts
+  - "PV filter"
+
+# Every event and every object: the reference point for efficiencies
+all:
+  obj_cuts: {}
+  evt_cuts: []
+
+baseline:
+  obj_cuts:
+    <<: *object_cuts
+  evt_cuts:
+    - *event_cuts
+
+# The baseline's cuts plus one more event cut: how one selection extends another
+baseline_2muons:
+  obj_cuts:
+    <<: *object_cuts
+  evt_cuts:
+    - *event_cuts
+    - ">=2 muons"

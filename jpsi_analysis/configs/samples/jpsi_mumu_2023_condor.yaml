@@ -1,0 +1,16 @@
+# jpsi_mumu_2023_condor: Run3Summer23 simulation made with HEPTAPOD's mcgen tools, pileup none
+mcgen:
+  path: root://cmseos.fnal.gov//store/user/scampbel/jpsi_mumu_2023/NANOAOD/
+  samples:
+    jpsi_mumu_2023_condor:
+      files:
+      - jpsi_mumu_2023_condor_NANOAOD_0000.root
+      - jpsi_mumu_2023_condor_NANOAOD_0001.root
+      - jpsi_mumu_2023_condor_NANOAOD_0002.root
+      - jpsi_mumu_2023_condor_NANOAOD_0003.root
+      - jpsi_mumu_2023_condor_NANOAOD_0004.root
+      - jpsi_mumu_2023_condor_NANOAOD_0005.root
+      - jpsi_mumu_2023_condor_NANOAOD_0006.root
+      - jpsi_mumu_2023_condor_NANOAOD_0007.root
+      - jpsi_mumu_2023_condor_NANOAOD_0008.root
+      - jpsi_mumu_2023_condor_NANOAOD_0009.root
